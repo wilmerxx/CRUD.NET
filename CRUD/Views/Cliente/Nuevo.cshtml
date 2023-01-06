@@ -11,16 +11,25 @@
         <div class="col-md-12">
 
             @Html.LabelFor(d => d.nombre_cli)
-            @Html.TextBoxFor(d => d.nombre_cli, "", new { @clas = "form-control" })
+            @Html.TextBoxFor(d => d.nombre_cli,"", new { @clas = "form-control" })
+            @Html.ValidationMessageFor(d => d.nombre_cli, null, new { @clas = "red" })
 
             @Html.LabelFor(d => d.cedula_cli)
             @Html.TextBoxFor(d => d.cedula_cli, "", new { @clas = "form-control" })
+            @Html.ValidationMessageFor(d => d.cedula_cli, null, new { @clas = "red" })
 
             @Html.LabelFor(d => d.correo_cli)
             @Html.TextBoxFor(d => d.correo_cli, "", new { @clas = "form-control" })
+            @Html.ValidationMessageFor(d => d.correo_cli, null, new { @clas = "red" })
 
-            @Html.LabelFor(d => d.fechaNacimiento_cli)
+            @Html.LabelFor(d => d.fechaNacimiento_cli) <br />
             @Html.EditorFor(d => d.fechaNacimiento_cli, "", new { @clas = "form-control" })
+            @Html.ValidationMessageFor(d => d.fechaNacimiento_cli, null, new { @clas = "red" })
+
+            <br />
+            <div>
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
 
 
         </div>

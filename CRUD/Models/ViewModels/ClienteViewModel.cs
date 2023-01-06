@@ -21,8 +21,11 @@ namespace CRUD.Models.ViewModels
         [Required]
         [Display(Name = "Correo")]
         [StringLength(80)]
+        [EmailAddress]
         public string correo_cli { get; set; }
         [Required]
+        [Display(Name = "fecha")]
+        [DataType(DataType.Date)]
         public DateTime fechaNacimiento_cli { get; set; }
         
     }

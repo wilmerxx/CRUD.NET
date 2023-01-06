@@ -31,6 +31,7 @@ namespace CRUD.Controllers
         {
             return View();
         }
+        [HttpPost]
 
         public ActionResult Nuevo(ClienteViewModel clientemodel)
         {
@@ -52,9 +53,9 @@ namespace CRUD.Controllers
                         db.cliente.Add(oCliente);
                         db.SaveChanges();
                     }
-                    
+                    return Redirect("~/Cliente/Index");
                 }
-                return Redirect("~/Cliente/Index");
+                return View(clientemodel);
             }
             catch (Exception ex)
             {
