@@ -24,7 +24,7 @@
                     <td>@oElemento.correo_cli</td>
                     <td>
                         <a class="btn btn-default" href="@Url.Action("Editar", "Cliente", new {id = oElemento.id_cli})">Editar</a>
-                        <a class="btn btn-danger" href="@Url.Action("Eliminar", "Cliente", new {id = oElemento.id_cli})">Eliminar</a>
+                        <a class="btn btn-danger" href="@Url.Action("Eliminar", "Cliente", new {id_cli = oElemento.id_cli})">Eliminar</a>
                     </td>
                 </tr>
             }

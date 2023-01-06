@@ -11,7 +11,7 @@ namespace CRUD.Models.ViewModels
 
         public int id_cli { get; set; }
         [Required]
-        [Display(Name = "Cedula")]
+        [Display(Name = "Nombre")]
         [StringLength(50)]
         public string nombre_cli { get; set; }
         [Required]

@@ -112,6 +112,19 @@ namespace CRUD.Controllers
 
         }
 
+        
+        public ActionResult Eliminar(int id_cli)
+        {
+            using(facturaEntities db = new facturaEntities())
+            {
+                var oCliente = db.cliente.Find(id_cli);
+                db.cliente.Remove(oCliente);
+                db.SaveChanges();
+
+            }
+            return Redirect("~/Cliente/Index");
+        }
+
     }
 
 
