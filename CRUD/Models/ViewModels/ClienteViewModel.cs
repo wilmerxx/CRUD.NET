@@ -24,8 +24,9 @@ namespace CRUD.Models.ViewModels
         [EmailAddress]
         public string correo_cli { get; set; }
         [Required]
-        [Display(Name = "fecha")]
+        [Display(Name = "Fecha de Nacimiento")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode =true)]
         public DateTime fechaNacimiento_cli { get; set; }
         
     }

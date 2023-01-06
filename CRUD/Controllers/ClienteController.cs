@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -62,6 +63,53 @@ namespace CRUD.Controllers
                 throw new Exception(ex.Message);
             }
            
+        }
+
+        public ActionResult Editar(int id)
+        {
+            ClienteViewModel model = new ClienteViewModel();
+            using(facturaEntities db = new facturaEntities())
+            {
+                var oCliente = db.cliente.Find(id);
+                model.nombre_cli = oCliente.nombre_cli;
+                model.cedula_cli = oCliente.cedula_cli;
+                model.correo_cli = oCliente.correo_cli;
+                model.fechaNacimiento_cli = (DateTime)oCliente.fechaNacimiento_cli;
+                model.id_cli = oCliente.id_cli;
+            }
+            return View(model);
+        }
+        [HttpPost]
+
+        public ActionResult Editar(ClienteViewModel clientemodel)
+        {
+            try
+            {
+                //Validar los data Annotations
+                if (ModelState.IsValid)
+                {
+                    //Si todo es valido vamos a guardar los datos en la base de datos 
+                    using (facturaEntities db = new facturaEntities())
+                    {
+                        var oCliente = new cliente();
+                        oCliente.id_cli = clientemodel.id_cli;
+                        oCliente.nombre_cli = clientemodel.nombre_cli;
+                        oCliente.cedula_cli = clientemodel.cedula_cli;
+                        oCliente.correo_cli = clientemodel.correo_cli;
+                        oCliente.fechaNacimiento_cli = clientemodel.fechaNacimiento_cli;
+
+                        db.Entry(oCliente).State= System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+                    }
+                    return Redirect("~/Cliente/Index");
+                }
+                return View(clientemodel);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
         }
 
     }
