@@ -1,0 +1,30 @@
+﻿@model List<CRUD.Models.ViewModels.ListClienteViewModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row" style="text-align:center; justify-content:center">
+            <a href="~/Cliente/Nuevo" class="btn btn-primary">Nuevo</a>
+        </div>
+        <table class="table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+            </tr>
+            @foreach(var oElemento in Model)
+            {
+                <tr>
+                    <td>@oElemento.id_cli</td>
+                    <td>@oElemento.nombre_cli</td>
+                    <td>@oElemento.correo_cli</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
