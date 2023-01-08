@@ -10,7 +10,6 @@ namespace CRUD.Models.ViewModels
         public int id_cli { get; set; }
         public string nombre_cli { get; set; }
         public string correo_cli { get; set; }
-
         public string imagen { get; set; }
 
     }

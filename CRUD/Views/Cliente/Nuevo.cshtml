@@ -36,6 +36,12 @@
                 @Html.ValidationMessageFor(d => d.fechaNacimiento_cli, null, new { @class = "red" })
             </div>
 
+            <div>
+                @Html.LabelFor(d => d.imagen)
+                @Html.TextBoxFor(d => d.imagen, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.imagen, null, new { @class = "red" })
+            </div>
+
             <br />
             <div>
                 <input value="Guardar" class="btn btn-primary" type="submit" />

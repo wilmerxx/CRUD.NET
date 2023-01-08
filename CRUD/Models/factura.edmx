@@ -13,7 +13,7 @@
           <Property Name="nombre_cli" Type="varchar" MaxLength="50" />
           <Property Name="cedula_cli" Type="varchar" MaxLength="10" />
           <Property Name="correo_cli" Type="varchar" MaxLength="80" />
-          <Property Name="fechaNacimiento_cli" Type="datetime" />
+          <Property Name="fechaNacimiento_cli" Type="date" />
           <Property Name="imagen" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityContainer Name="facturaModelStoreContainer">
@@ -31,7 +31,7 @@
           <Property Name="nombre_cli" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cedula_cli" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="correo_cli" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="fechaNacimiento_cli" Type="DateTime" Precision="3" />
+          <Property Name="fechaNacimiento_cli" Type="DateTime" Precision="0" />
           <Property Name="imagen" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="facturaEntities" annotation:LazyLoadingEnabled="true">

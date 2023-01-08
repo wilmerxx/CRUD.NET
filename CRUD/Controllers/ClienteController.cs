@@ -18,13 +18,13 @@ namespace CRUD.Controllers
             using (facturaEntities db = new facturaEntities())
             {
                 lst = (from d in db.cliente
-                       select new ListClienteViewModel
-                       {
-                           id_cli = d.id_cli,
-                           nombre_cli = d.nombre_cli,
-                           correo_cli = d.correo_cli,
-                           imagen = d.imagen
-                       }).ToList();
+                        select new ListClienteViewModel
+                        {
+                            id_cli = d.id_cli,
+                            nombre_cli = d.nombre_cli,
+                            correo_cli = d.correo_cli,
+                            imagen = d.imagen
+                        }).ToList();
             }
                 return View(lst);
         }
