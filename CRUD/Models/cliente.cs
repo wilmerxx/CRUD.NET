@@ -19,5 +19,6 @@ namespace CRUD.Models
         public string cedula_cli { get; set; }
         public string correo_cli { get; set; }
         public Nullable<System.DateTime> fechaNacimiento_cli { get; set; }
+        public string imagen { get; set; }
     }
 }

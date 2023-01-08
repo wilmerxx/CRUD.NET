@@ -11,5 +11,7 @@ namespace CRUD.Models.ViewModels
         public string nombre_cli { get; set; }
         public string correo_cli { get; set; }
 
+        public string imagen { get; set; }
+
     }
 }

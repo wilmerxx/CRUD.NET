@@ -32,8 +32,14 @@
 
             <div>
                 @Html.LabelFor(d => d.fechaNacimiento_cli) <br />
-                @Html.EditorFor(d => d.fechaNacimiento_cli, "", new { @class = "form-control" })
+                @Html.EditorFor(d => d.fechaNacimiento_cli, new { htmlAttributes = new { @class = "datepicker" } })
                 @Html.ValidationMessageFor(d => d.fechaNacimiento_cli, null, new { @class = "red" })
+            </div>
+
+            <div>
+                @Html.LabelFor(d => d.imagen)
+                @Html.TextBoxFor(d => d.imagen, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.imagen, null, new { @class = "red" })
             </div>
 
             <br />
@@ -45,4 +51,25 @@
         </div>
 
     </div>
+}
+
+<link href="~/Scripts/jquery-ui.min.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+@section scripts{
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $(".datepicker").datepicker({
+                dateFormat: "yy/mm/dd",
+                changeMonth: true,
+                changeYear: true,
+                //yearRange:"-10:+10"
+                minDate: new Date(1992, 0, 1),
+                maxDate: new Date(2008, 0, 1),
+                showOn: "both",
+
+            });
+        });
+    </script>
 }

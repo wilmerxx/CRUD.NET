@@ -25,9 +25,13 @@ namespace CRUD.Models.ViewModels
         public string correo_cli { get; set; }
         [Required]
         [Display(Name = "Fecha de Nacimiento")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode =true)]
+       // [DataType(DataType.Date)]
+       // [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode =true)]
         public DateTime fechaNacimiento_cli { get; set; }
-        
+
+        [Required]
+        [Display(Name = "Imagen")]
+        public String imagen { get; set; }
+
     }
 }

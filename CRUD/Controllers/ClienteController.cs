@@ -23,6 +23,7 @@ namespace CRUD.Controllers
                            id_cli = d.id_cli,
                            nombre_cli = d.nombre_cli,
                            correo_cli = d.correo_cli,
+                           imagen = d.imagen
                        }).ToList();
             }
                 return View(lst);
@@ -50,6 +51,7 @@ namespace CRUD.Controllers
                         oCliente.cedula_cli = clientemodel.cedula_cli;
                         oCliente.correo_cli = clientemodel.correo_cli;
                         oCliente.fechaNacimiento_cli = clientemodel.fechaNacimiento_cli;
+                        oCliente.imagen = clientemodel.imagen;
 
                         db.cliente.Add(oCliente);
                         db.SaveChanges();
@@ -75,6 +77,7 @@ namespace CRUD.Controllers
                 model.cedula_cli = oCliente.cedula_cli;
                 model.correo_cli = oCliente.correo_cli;
                 model.fechaNacimiento_cli = (DateTime)oCliente.fechaNacimiento_cli;
+                model.imagen = oCliente.imagen;
                 model.id_cli = oCliente.id_cli;
             }
             return View(model);
@@ -84,7 +87,7 @@ namespace CRUD.Controllers
         public ActionResult Editar(ClienteViewModel clientemodel)
         {
             try
-            {
+            { 
                 //Validar los data Annotations
                 if (ModelState.IsValid)
                 {
@@ -97,6 +100,7 @@ namespace CRUD.Controllers
                         oCliente.cedula_cli = clientemodel.cedula_cli;
                         oCliente.correo_cli = clientemodel.correo_cli;
                         oCliente.fechaNacimiento_cli = clientemodel.fechaNacimiento_cli;
+                        oCliente.imagen = clientemodel.imagen;
 
                         db.Entry(oCliente).State= System.Data.Entity.EntityState.Modified;
                         db.SaveChanges();
